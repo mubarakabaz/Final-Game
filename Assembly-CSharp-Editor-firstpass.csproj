@@ -146,6 +146,30 @@
  <Reference Include="UnityEditor.Facebook.Extensions">
  <HintPath>/opt/Unity/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="AsyncBridge.Net35">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/AsyncBridge.Net35.dll</HintPath>
+ </Reference>
+ <Reference Include="GitHub.Logging">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+ </Reference>
+ <Reference Include="ReadOnlyCollectionsInterfaces">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/ReadOnlyCollectionsInterfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="sfw.net">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/System.Threading.dll</HintPath>
+ </Reference>
+ <Reference Include="GitHub.Unity">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.Unity.dll</HintPath>
+ </Reference>
+ <Reference Include="GitHub.UnityShim">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+ </Reference>
+ <Reference Include="GitHub.Api">
+ <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.Api.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/home/fiqih/.config/unity3d/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -160,30 +184,6 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>/home/fiqih/.config/unity3d/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="GitHub.Logging">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
- </Reference>
- <Reference Include="ReadOnlyCollectionsInterfaces">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/ReadOnlyCollectionsInterfaces.dll</HintPath>
- </Reference>
- <Reference Include="GitHub.Unity">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.Unity.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/System.Threading.dll</HintPath>
- </Reference>
- <Reference Include="GitHub.UnityShim">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
- </Reference>
- <Reference Include="GitHub.Api">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/GitHub.Api.dll</HintPath>
- </Reference>
- <Reference Include="AsyncBridge.Net35">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/AsyncBridge.Net35.dll</HintPath>
- </Reference>
- <Reference Include="sfw.net">
- <HintPath>/home/fiqih/Unity/Final-Game/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

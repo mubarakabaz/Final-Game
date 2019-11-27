@@ -5,12 +5,12 @@ using UnityEngine;
 public class coin : MonoBehaviour {
 
 	public int score = 0;
-	public AudioSource getCoin;
+	private AudioSource getCoin;
 	
 
 	// Use this for initialization
 	void Start () {
-		
+		getCoin = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame

@@ -18,12 +18,13 @@ public class Player : MonoBehaviour {
 	Animator anim;
 	private enum State {Idle, Run, Jump, Fall};
 	private State state = State.Idle;
-	public AudioSource jumpSound;
+	private AudioSource jumpSound;
 	public AudioSource backsound;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		jumpSound = GetComponent<AudioSource>();
 		playBackSound();
 	}
 	
