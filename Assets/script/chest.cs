@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 public class chest : MonoBehaviour {
 
-	public Sprite close;
-	public Sprite open;
-	private SpriteRenderer openChest;
 	public int score = 0;
+	Animator anim;
+	private enum State {Idle, Open};
+	private State state = State.Idle;
+	
 
 	// Use this for initialization
 	void Start () {
-		openChest = GetComponent<SpriteRenderer> ();
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		anim.SetInteger("peti",(int)state);
 	}
 
 	/// <summary>
@@ -27,8 +28,9 @@ public class chest : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			openChest.sprite = open;
+			state = State.Open;
 			score += 5;
+			Debug.Log(score);
 		}
 	}
 }

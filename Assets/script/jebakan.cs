@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class jebakan : MonoBehaviour {
 
-	Gerak komponenGerak;
+	Player komponenGerak;
 
 	// Use this for initialization
 	void Start () {
-		komponenGerak = GameObject.Find("Player").GetComponent<Gerak>();
+		komponenGerak = GameObject.Find("Player").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame

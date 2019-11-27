@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{320CA8BD-6E0D-1349-1DF8-D99486560078}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final-Game", "Assembly-CSharp.csproj", "{320CA8BD-6E0D-1349-1DF8-D99486560078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final-Game", "Assembly-CSharp-Editor-firstpass.csproj", "{6A8BC93E-1D2B-861A-8324-A184FD9A4D6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +15,15 @@ Global
 		{320CA8BD-6E0D-1349-1DF8-D99486560078}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320CA8BD-6E0D-1349-1DF8-D99486560078}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{320CA8BD-6E0D-1349-1DF8-D99486560078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8BC93E-1D2B-861A-8324-A184FD9A4D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8BC93E-1D2B-861A-8324-A184FD9A4D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8BC93E-1D2B-861A-8324-A184FD9A4D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8BC93E-1D2B-861A-8324-A184FD9A4D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
