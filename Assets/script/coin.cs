@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class coin : MonoBehaviour {
 
 	public int score = 0;
+	public AudioSource getCoin;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 	/// <summary>
 	/// Sent when another object enters a trigger collider attached to this
@@ -24,8 +27,13 @@ public class coin : MonoBehaviour {
 	{
 		if(other.tag == "Player"){
 			Destroy (gameObject);
+			playgetCoinSound();
 			score++;
 			Debug.Log("Score: " + score);
 		}
+	}
+
+	public void playgetCoinSound(){
+		getCoin.Play();
 	}
 }

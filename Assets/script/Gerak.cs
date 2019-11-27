@@ -22,6 +22,7 @@ public class Gerak : MonoBehaviour {
 	public AudioSource jumpSound;
 	public AudioSource backsound;
 
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
@@ -70,6 +71,8 @@ public class Gerak : MonoBehaviour {
 	public void playBackSound(){
 		backsound.Play();
 	}
+
+	
 
 	void balikBadan(){
 		 balik = !balik;
