@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gerak : MonoBehaviour {
 
+
 	public float speed = 5f;
 	public float jumpspeed = 8f;
 	private Rigidbody2D rb;
@@ -19,11 +20,13 @@ public class Gerak : MonoBehaviour {
 	private enum State {Idle, Run, Jump, Fall};
 	private State state = State.Idle;
 	public AudioSource jumpSound;
+	public AudioSource backsound;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		playBackSound();
 	}
 
 	// Update is called once per frame
@@ -62,6 +65,10 @@ public class Gerak : MonoBehaviour {
 
 	public void playSoundJump(){
 		jumpSound.Play();
+	}
+
+	public void playBackSound(){
+		backsound.Play();
 	}
 
 	void balikBadan(){
