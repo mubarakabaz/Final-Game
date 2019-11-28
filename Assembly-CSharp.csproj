@@ -55,6 +55,7 @@
      <Compile Include="Assets\script\chest.cs" />
      <Compile Include="Assets\script\coin.cs" />
      <Compile Include="Assets\script\enemyMove.cs" />
+     <Compile Include="Assets\script\enemyMoveMulti.cs" />
      <Compile Include="Assets\script\jebakan.cs" />
      <Compile Include="Assets\script\Player.cs" />
      <Compile Include="Assets\script\rotate.cs" />
