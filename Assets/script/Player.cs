@@ -1,69 +1,86 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
-	public float speed = 5f;
-	public float jumpspeed = 8f;
+
 	private Rigidbody2D rb;
-	private float movement = 0f;
-	public Transform groundCheckPoint;
-	public float groundCheckRadius;
-	public LayerMask groundLayer;
-	public bool isTouchingGround;
-	public bool balik;
-	public int pindah;
 	private Collider2D col;
-	Animator anim;
+	private Animator anim;
+
 	private enum State {Idle, Run, Jump, Fall};
 	private State state = State.Idle;
-	private AudioSource jumpSound;
-	public AudioSource backsound;
+
+	
+
+	[SerializeField] private int score = 0;
+	[SerializeField] private float speed = 7;
+	[SerializeField] private float jumpspeed = 8f;
+	[SerializeField] private LayerMask groundLayer;
+	[SerializeField] private Text scoreText;
+	[SerializeField] private AudioSource jumpSound;
+	[SerializeField] private AudioSource coin;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		jumpSound = GetComponent<AudioSource>();
-		playBackSound();
+		col = GetComponent<Collider2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		isTouchingGround = Physics2D.OverlapCircle(groundCheckPoint.position,groundCheckRadius,groundLayer);
-		movement = Input.GetAxis("Horizontal");
-
-		// mulai gerak player
-		if(Input.GetKey(KeyCode.D)){
-			rb.velocity = new Vector2(movement*speed,rb.velocity.y);
-			pindah = -1;
-		}
-		else if(Input.GetKey(KeyCode.A)){
-			rb.velocity = new Vector2(movement*speed, rb.velocity.y);
-			pindah = 1;
-		}
-		if (Input.GetKey(KeyCode.W) && isTouchingGround){
-			rb.velocity = new Vector2(rb.velocity.x,jumpspeed);
-			state = State.Jump;
-			playSoundJump();
-		}
-		//stop gerak player
-
-		//mulai balik player
-		if (pindah > 0 && !balik)
-		{
-			balikBadan();
-		}
-		else if(pindah < 0 && balik){
-			balikBadan();
-		}
-		//stop balik player
-
+		coin.Play();
+		Movement();
 		VelocityState();
 		anim.SetInteger("state", (int)state);
 
 	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		scoreText.text = score.ToString();
+		if (other.tag == "Coin")
+		{
+			Destroy(other.gameObject);
+			score += 1;
+			scoreText.text = score.ToString();
+		}
+		if (other.tag == "Treasure")
+		{
+			score += 5;
+			scoreText.text = score.ToString();
+		}
+	}
 	
+	private void OnCollisionEnter2D(Collision2D other) {
+		if (other.gameObject.tag == "Enemy")
+		{
+			Destroy(this.gameObject);
+		}
+	}
+	
+	private void Movement(){
+		float movement = Input.GetAxis("Horizontal");
+
+
+		if(Input.GetKey(KeyCode.D)){
+			rb.velocity = new Vector2(movement*speed,rb.velocity.y);
+			// pindah = -1;
+			transform.localScale = new Vector2(1, 1);
+		}
+		else if(Input.GetKey(KeyCode.A)){
+			rb.velocity = new Vector2(movement*speed, rb.velocity.y);
+			// pindah = 1;
+			transform.localScale = new Vector2(-1, 1);
+		}
+		if (Input.GetKey(KeyCode.W) && col.IsTouchingLayers(groundLayer)){
+			rb.velocity = new Vector2(rb.velocity.x,jumpspeed);
+			state = State.Jump;
+			playSoundJump();
+		}
+	}
 
 	private void VelocityState(){
 		if (state == State.Jump)
@@ -75,7 +92,7 @@ public class Player : MonoBehaviour {
 		}
 		else if (state == State.Fall)
 		{
-			if (isTouchingGround)
+			if (col.IsTouchingLayers(groundLayer))
 			{
 				state = State.Idle;
 			}
@@ -93,17 +110,5 @@ public class Player : MonoBehaviour {
 
 	public void playSoundJump(){
 		jumpSound.Play();
-	}
-
-	public void playBackSound(){
-		backsound.Play();
-	}	
-
-	void balikBadan(){
-		 balik = !balik;
-		 Vector3 karakter = transform.localScale;
-		 karakter.x *= -1;
-		 transform.localScale = karakter;
-		 
 	}
 }

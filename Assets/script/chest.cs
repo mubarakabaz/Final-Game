@@ -29,8 +29,6 @@ public class chest : MonoBehaviour {
 		if (other.tag == "Player" && state == State.Idle)
 		{
 			state = State.Open;
-			score += 5;
-			Debug.Log(score);
 		}
 	}
 }

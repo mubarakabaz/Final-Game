@@ -9,7 +9,7 @@ public class enemyMove : MonoBehaviour {
 	private Vector3 nexPos;
 	Player komponenGerak;
 
-	[SerializeField] private float speed = 50;
+	[SerializeField] private float speed = 15;
 	[SerializeField] private Transform mace;
 	[SerializeField] private Transform transformB;
 	// Use this for initialization

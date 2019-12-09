@@ -54,6 +54,7 @@
      <Compile Include="Assets\Plugins\GitHub\Editor\ExtensionLoader.cs" />
      <Compile Include="Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs" />
      <None Include="Assets\Plugins\GitHub\Editor\credits.txt" />
+     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
      <None Include="Assets\Plugins\GitHub\Editor\eula.txt" />
  <Reference Include="Facebook.Unity.Settings">

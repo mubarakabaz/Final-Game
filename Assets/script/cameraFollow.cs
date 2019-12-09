@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class cameraFollow : MonoBehaviour {
 
-	public GameObject player;
-	public float offset;
-	private Vector3 playerPosition;
-	public float offsetSmoothing;
+	public Transform player;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,16 +14,6 @@ public class cameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		playerPosition = new Vector3 (player.transform.position.x, player.transform.position.y, transform.position.z);
-		if (player.transform.localScale.x > 0f)
-		{
-			playerPosition =new Vector3 (playerPosition.x + offset, playerPosition.y ,playerPosition.z);
-		}
-		else
-		{
-			playerPosition = new Vector3 (playerPosition.x - offset, playerPosition.y, playerPosition.z);
-		}
-
-		transform.position = Vector3.Lerp(transform.position,playerPosition,offsetSmoothing*Time.deltaTime);
-	}
+		transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+}
 }
