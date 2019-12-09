@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FINAL.unity
+    guid: 0d90e992e463a46d9b5bf0c96c307fe9
+  - enabled: 1
+    path: Assets/Scenes/tesPindah.unity
+    guid: b354b94211fb64c61a87d9fc7ff3bdcf

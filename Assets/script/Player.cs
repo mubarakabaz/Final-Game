@@ -53,14 +53,7 @@ public class Player : MonoBehaviour {
 			scoreText.text = score.ToString();
 		}
 	}
-	
-	private void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.tag == "Enemy")
-		{
-			Destroy(this.gameObject);
-		}
-	}
-	
+		
 	private void Movement(){
 		float movement = Input.GetAxis("Horizontal");
 

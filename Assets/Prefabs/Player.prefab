@@ -224,12 +224,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e032dae1a9ff44b0946d2951714b9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   speed: 5
   jumpspeed: 8
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  backsound: {fileID: 0}
+  scoreText: {fileID: 0}
+  jumpSound: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!212 &212012878399169400
 SpriteRenderer:
   m_ObjectHideFlags: 1

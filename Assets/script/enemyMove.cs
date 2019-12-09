@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemyMove : MonoBehaviour {
 
@@ -43,14 +44,17 @@ public class enemyMove : MonoBehaviour {
 		else
 		{
 			nexPos = turun;
-			speed = 50;
+			speed = 20;
 		}
 	}
+
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player")
 		{
 			Destroy(komponenGerak.gameObject);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 		}
 	}
 }

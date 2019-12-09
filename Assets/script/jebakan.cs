@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class jebakan : MonoBehaviour {
 
@@ -20,6 +21,7 @@ public class jebakan : MonoBehaviour {
 		if (other.tag == "Player")
 		{
 			Destroy(komponenGerak.gameObject);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
 }
